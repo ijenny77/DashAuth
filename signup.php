@@ -10,6 +10,8 @@ VALUES ('$username','$email','$hashed_password')";
 
 if($conn->query($sql) === TRUE){
     echo "User connected successfully!";
+    echo "you can now login from here :";
+    echo "<a href='login.html'  >Login</a>";
 }else{
     echo "Error:".conn->error;
 }
