@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+h1{
+    margin-left: 2.1rem;
+}
+div{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 12%;
+    padding: 1.3rem;
+    margin: 20rem auto;
+    box-shadow: 1px 2px 5px white;
+}
+input{
+    margin-bottom: 1.2rem;
+    height: 3vh;
+    border-radius: 4px;
+}
+button{
+    margin-left: 0.3rem;
+    width:90%;
+    height: 3vh;
+    border-radius: 7px;  
+    margin-bottom:1.5rem;
+    background-color: black;
+    color: white;
+}
