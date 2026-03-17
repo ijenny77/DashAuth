@@ -1,20 +1,41 @@
-div{
-    border: 1px solid black;
+.outerdiv{
+    /* border: 1px solid black;*/
     border-radius:5px;
-    width: 15%;
+    width: 30%;
     padding-left: 1.9rem;
     padding-bottom: 2rem;
-    margin: 14rem auto;
+    margin: 10rem auto;
+    display: flex;
+
+}
+.innerdiv{
     background-color: black;
     color: white;
+    padding: 2.5rem;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius:5px ;
+
+}
+h1{
+    margin-left:1.3rem;
+    margin-bottom: 2rem;
 }
 input{
-    margin-bottom:0.7rem ;
+    margin-bottom:0.9rem ;
+    height: 3vh;
+    border-radius: 7px;
+    padding-left: 0.3rem;
+}
+button{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 85%;
     height: 3vh;
     border-radius: 7px;
 }
-button{
-    width: 74%;
-    height: 3vh;
-    border-radius: 7px;
+img{
+    height: 50vh;
+    width:80vw;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }

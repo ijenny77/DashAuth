@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wholepage{
+            display: flex;
+            gap: 5rem;
+            margin-left: 4rem;
+        }
+        .sidebar a{
+           padding-top: 4rem;
+        }    
+    </style>
+</head>
+<body>
+    <div class="wholepage">
+        <div class="sidebar">
+            <div>
+                <img src="" alt="">
+                <p><?php echo $_SESSION['user'] ?></p>
+            </div>
+            <a href="">Dashboard</a><br>
+            <a href="">Accounts</a><br>
+            <a href="">Transactions</a><br>
+            <a href="">Budgets</a><br>
+            <a href="">Reports</a><br>
+            <a href="">Settings</a>
+        </div>
+        <div>
+            <h1> Welcome<?php echo $_SESSION['user'],>!</h1>
+            <div>
+                <div><p>Total Balance</p><p>$12,450.75</p></div>
+                <div><p>Income This Month</p><p>$4,200</p></div>
+                <div><p>Expenses This Month</p><p>$2,950</p></div>
+            </div>
+            <div>
+                <div>
+                    <p>Recent Transactions</p>
+                    <p>Paycheck Deposit <span>$2,000.00</span></p>
+                    <p>Grocery Store <span>$85.20</span></p>
+                    <p>Electricity Bill <span>$120.50</span></p>
+                    <p>Amazon Purchase<span>$65.75</span></p>
+                </div>
+                <div>
+                    <p>Budget This Month</p>
+                    <p>Used <?php echo  ?></p>
+                    <div style="background:#eee; border-radius:10px; overflow:hidden;">
+                        <div style="
+                            width:65%;
+                            background:black;
+                            color:white;
+                            padding:5px;
+                            text-align:center;">65%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
