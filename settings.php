@@ -12,22 +12,24 @@
         <title>Document</title>
         <style>
         body {
-            background-color: black;
+            background-color: #121212;
         }
         table,tr,td,th {
-            background-color: #f0f0f0;
-            border : 3px solid grey;
+            background-color: #1f1f1f;
+            border : 3px solid black;
             border-collapse: collapse;
             padding: 0.6rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            color:white;
         }
         table {
             margin:2px auto;
             margin-bottom: 3rem;
+            box-shadow:1px 3px 5px grey;
         }
         h2 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-decoration: underline;
         }
         #new {
@@ -77,13 +79,13 @@
         <div class="sidebar">
             <img src="profile.png" alt="Profile Picture">
             <h2>Jenny</h2>
-            <a href="dashboard.php" class="active">Dashboard</a>
+            <a href="admin_dashboard.php" class="active">Dashboard</a>
             <a href="accounts.php">Accounts</a>
             <a href="transactions.php">Transactions</a>
             <a href="budgets.php">Budgets</a>
             <a href="reports.php">Reports</a>
             <a href="settings.php">Settings</a>
-            <a href="logout.php">Logout</a>
+            <a href="logout.html">Logout</a>
         </div>
         <h2 style = "color:white">Users List</h2>
         <table>
