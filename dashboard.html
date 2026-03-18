@@ -1,63 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            font-family: Arial, sans-serif;
+        }
+        .wholepage{
+            display: flex;
+        }
+        .contentSide{
+            background-color: #121212;
+            padding: 4.3rem 4rem;
+            width: 78rem;
+            margin-left: 13rem;
+            padding-bottom: 3.9rem;
+        }
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #1a1a1a;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar img {
+            width: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            color: white;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: white;
+            margin-top:0.8rem;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background-color: #333;
+        }
+        .balance{
+            border:1px solid black;
+            color: white;
+            background-color: #1F1F1F;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        .income{
+            border:1px solid black;
+            color: white;
+            background-color: #1F1F1F;
+            border-radius: 5px;
+            padding: 2rem;
+        }
+        .expenses{
+            border:1px solid black;
+            color: white;
+            background-color: #1F1F1F;
+            border-radius: 5px;
+            padding: 2rem ;
+        }
+        .allboxes{
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+        .money{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-right: 4rem;
+            margin-top: 1rem;
+        }
+
+        .transactions{
+            font-size: 1.1rem;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 30%;
+            background-color: #1F1F1F;
+            color: white;
+            padding: 1rem;
+            margin-top: 2.5rem;
+        }
+        .transactions p{
+            padding-bottom: 1.6rem;
+            padding-top: 1.6rem;
+            /* border-bottom: 1px solid rgb(145, 143, 143); */
+        }
+        .rtransactions{
+            display: flex;
+            justify-content: space-between;
+        }
+        .mtransactions{
+            font-weight: 700;
+        }
+        .budget{
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: #1F1F1F;
+            color:white;
+            height: 16vh;
+            padding: 1.5rem;
+            width: 30%;
+            margin-top: 2.5rem;
+        }
+        .TransactionsBudget{
+            display:flex;
+            gap:2rem;
+            margin-left: 1rem;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div>My Dashboard</div>
-    <a href="login.html">Logout</a>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container">
-    <!-- Welcome -->
-    <div class="welcome">
-      <h2>Welcome, <?php echo $_SESSION['user']; ?>!</h2>
-      <p>Here's your dashboard overview.</p>
+    <div class="wholepage">
+        <div class="sidebar">
+            <img src="profile.png" alt="Profile Picture">
+            <h2>Jenny</h2>
+            <a href="dashboard.php" class="active">Dashboard</a>
+            <a href="accounts.php">Accounts</a>
+            <a href="transactions.php">Transactions</a>
+            <a href="budgets.php">Budgets</a>
+            <a href="reports.php">Reports</a>
+            <a href="settings.php">Settings</a>
+            <a href="logout.php">Logout</a>
+        </div>
+        <div class="contentSide">
+            <h1 style="color:white"> Welcome<?php echo $_SESSION['user'],>!</h1>
+            <div class="allboxes">
+                <div class="balance">
+                    <p>Total Balance</p>
+                    <p class="money">$12,450.75</p>
+                </div>
+                <div class="income">
+                    <p>Income This Month</p>
+                    <p class="money">$4,200</p>
+                </div>
+                <div class="expenses">
+                    <p>Expenses This Month</p>
+                    <p class="money">$2,950</p>
+                </div>
+            </div>
+            <div class="TransactionsBudget">
+                <div class="transactions">
+                    <p>Recent Transactions</p>
+                    <hr>
+                    <div class="rtransactions">
+                        <p>Paycheck Deposit</p>
+                        <p class="mtransactions">$2,000.00</p>
+                    </div>
+                    <hr>
+                    <div class="rtransactions">
+                        <p>Grocery Store </p>
+                        <p class="mtransactions">$85.20</p>
+                    </div>
+                    <hr>
+                    <div class="rtransactions">
+                        <p>Electricity Bill</p>
+                        <p class="mtransactions">$120.50</p>
+                    </div>
+                    <hr>
+                    <div class="rtransactions">
+                        <p>Amazon Purchase</p>
+                        <p class="mtransactions">$65.75</p>
+                    </div>
+                </div>
+                <div class="budget">
+                    <p style="margin-bottom: 1rem;">Budget This Month</p>
+                    <p>Used <?php echo  ?></p>
+                    <div style="background:#eee; border-radius:10px; overflow:hidden;">
+                        <div style="
+                            width:65%;
+                            background:black;
+                            color:white;
+                            padding:5px;
+                            text-align:center;">65%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Cards -->
-    <div class="cards">
-      <div class="card">
-        <h3>Total Users</h3>
-        <p>150</p>
-      </div>
-      <div class="card">
-        <h3>New Signups</h3>
-        <p>25</p>
-      </div>
-      <div class="card">
-        <h3>Messages</h3>
-        <p>12</p>
-      </div>
-    </div>
-
-    <!-- Recent Activity Table -->
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Action</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Jenny</td>
-          <td>Logged in</td>
-          <td>2026-03-16</td>
-        </tr>
-        <tr>
-          <td>Alice</td>
-          <td>Signed up</td>
-          <td>2026-03-15</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </body>
 </html>

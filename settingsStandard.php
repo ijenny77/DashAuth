@@ -6,7 +6,7 @@ if(!isset($_SESSION['user'])){
     header("Location: login.html");
 }
 
-header("Location:dashboard1.html");
+header("Location:settingsStandard.html");
 echo "Welcome " . $_SESSION['user'];
 
 ?>

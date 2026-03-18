@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #1a1a1a;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar img {
+            width: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background-color: #333;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 220px;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        /* Settings form container */
+        .settings-section {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .settings-section h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .settings-section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .settings-section input, 
+        .settings-section select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+
+        .settings-section button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .settings-section button:hover {
+            background-color: #ccc;
+        }
+
+        /* Notifications checkboxes */
+        .settings-section input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="profile.png" alt="Profile Picture">
+        <h2>Jenny</h2>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="accounts.php">Accounts</a>
+        <a href="transactions.php">Transactions</a>
+        <a href="budgets.php">Budgets</a>
+        <a href="reports.php">Reports</a>
+        <a href="settings.php" class="active">Settings</a>
+        <a href="logout.php">Logout</a>
+    </div>
+
+    <div class="main">
+        <h1>Settings</h1>
+
+        <!-- Profile Information -->
+        <div class="settings-section">
+            <h3>Profile Information</h3>
+            <form action="update_profile.php" method="post">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" value="Jenny Smith" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="jenny.smith@example.com" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" value="+1 (123) 456-7890">
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Change Password -->
+        <div class="settings-section">
+            <h3>Change Password</h3>
+            <form action="update_password.php" method="post">
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" name="current_password">
+
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" name="new_password">
+
+                <label for="confirm-password">Confirm New Password</label>
+                <input type="password" id="confirm-password" name="confirm_password">
+
+                <button type="submit">Update Password</button>
+            </form>
+        </div>
+
+        <!-- Notification Preferences -->
+        <div class="settings-section">
+            <h3>Notification Preferences</h3>
+            <form action="update_notifications.php" method="post">
+                <label>
+                    <input type="checkbox" name="email_notifications" checked>
+                    Email Notifications
+                </label>
+                <label>
+                    <input type="checkbox" name="sms_notifications" checked>
+                    SMS Notifications
+                </label>
+                <label>
+                    <input type="checkbox" name="push_notifications" checked>
+                    Push Notifications
+                </label>
+
+                <button type="submit">Save Preferences</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

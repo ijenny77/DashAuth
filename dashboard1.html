@@ -3,62 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <style>
-        .wholepage{
-            display: flex;
-            gap: 5rem;
-            margin-left: 4rem;
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
         }
-        .sidebar a{
-           padding-top: 4rem;
-        }    
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #1a1a1a;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar img {
+            width: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background-color: #333;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 220px;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            background-color: #2b2b2b;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        /* Recent transactions table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2b2b2b;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
-    <div class="wholepage">
-        <div class="sidebar">
-            <div>
-                <img src="" alt="">
-                <p><?php echo $_SESSION['user'] ?></p>
-            </div>
-            <a href="">Dashboard</a><br>
-            <a href="">Accounts</a><br>
-            <a href="">Transactions</a><br>
-            <a href="">Budgets</a><br>
-            <a href="">Reports</a><br>
-            <a href="">Settings</a>
-        </div>
-        <div>
-            <h1> Welcome<?php echo $_SESSION['user'],>!</h1>
-            <div>
-                <div><p>Total Balance</p><p>$12,450.75</p></div>
-                <div><p>Income This Month</p><p>$4,200</p></div>
-                <div><p>Expenses This Month</p><p>$2,950</p></div>
-            </div>
-            <div>
-                <div>
-                    <p>Recent Transactions</p>
-                    <p>Paycheck Deposit <span>$2,000.00</span></p>
-                    <p>Grocery Store <span>$85.20</span></p>
-                    <p>Electricity Bill <span>$120.50</span></p>
-                    <p>Amazon Purchase<span>$65.75</span></p>
-                </div>
-                <div>
-                    <p>Budget This Month</p>
-                    <p>Used <?php echo  ?></p>
-                    <div style="background:#eee; border-radius:10px; overflow:hidden;">
-                        <div style="
-                            width:65%;
-                            background:black;
-                            color:white;
-                            padding:5px;
-                            text-align:center;">65%
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="sidebar">
+        <img src="profile.png" alt="Profile Picture">
+        <h2>Jenny</h2>
+        <a href="dashboard.php" class="active">Dashboard</a>
+        <a href="accounts.php">Accounts</a>
+        <a href="transactions.php">Transactions</a>
+        <a href="budgets.php">Budgets</a>
+        <a href="reports.php">Reports</a>
+        <a href="settingsStandard.php">Settings</a>
+        <a href="logout.php">Logout</a>
     </div>
+
+    <div class="main">
+        <h1>Welcome!</h1>
+
+        <!-- Cards -->
+        <div class="card-container">
+            <div class="card">
+                <h3>Total Balance</h3>
+                <p>$12,450</p>
+            </div>
+            <div class="card">
+                <h3>Income</h3>
+                <p>$4,200</p>
+            </div>
+            <div class="card">
+                <h3>Expenses</h3>
+                <p>$2,950</p>
+            </div>
+            <div class="card">
+                <h3>Budget Used</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width:65%">65%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions -->
+        <h2>Recent Transactions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2026-03-10</td>
+                    <td>Salary</td>
+                    <td>$2,000</td>
+                    <td>Income</td>
+                </tr>
+                <tr>
+                    <td>2026-03-12</td>
+                    <td>Groceries</td>
+                    <td>$150</td>
+                    <td>Expense</td>
+                </tr>
+                <tr>
+                    <td>2026-03-14</td>
+                    <td>Freelance Payment</td>
+                    <td>$500</td>
+                    <td>Income</td>
+                </tr>
+                <tr>
+                    <td>2026-03-15</td>
+                    <td>Electricity Bill</td>
+                    <td>$100</td>
+                    <td>Expense</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </body>
 </html>
