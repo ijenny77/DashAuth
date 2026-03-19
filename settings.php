@@ -80,10 +80,10 @@
             <img src="profile.png" alt="Profile Picture">
             <h2>Jenny</h2>
             <a href="admin_dashboard.php" class="active">Dashboard</a>
-            <a href="accounts.php">Accounts</a>
-            <a href="transactions.php">Transactions</a>
-            <a href="budgets.php">Budgets</a>
-            <a href="reports.php">Reports</a>
+            <a href="">Accounts</a>
+            <a href="">Transactions</a>
+            <a href="">Budgets</a>
+            <a href="">Reports</a>
             <a href="settings.php">Settings</a>
             <a href="logout.html">Logout</a>
         </div>
