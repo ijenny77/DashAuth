@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./src/output.css">
 </head>
 <body>
-    <div class="outerdiv">
-        <img src="Make money_.jpeg" alt="">
-        <div class="innerdiv">
-            <h1>LOGIN</h1>
+    <div class="flex border w-fit mt-40 rounded-xl mx-auto shadow-2xl shadow-zinc-700 shadow-blur-lg">
+        <img class="w-50 rounded-l-xl" src="Make money_.jpeg" alt="">
+        <div class="p-8">
+            <h1 class="text-center py-10 font-bold">LOGIN</h1>
             <form action="login.php" method="POST">
-                <input type="email" name="email" required placeholder="Email"><br>
-                <input type="password" name="password" required placeholder="Password"><br>
-                <button type="submit">Login</button><br>
-                <p>Do you have an account? <a href="signup.html">signup</a></p>
+                <input class="border rounded-md mb-4 px-2 py-1" type="email" name="email" required placeholder="Email"><br>
+                <p class="text-xs ml-[5.8rem]">Forgot password?</p>
+                <input class="border rounded-md mb-4 px-2 py-1" type="password" name="password" required placeholder="Password"><br>
+                <span class="text-sm"><input class="mr-1" type="checkbox">show password</span>
+                <button class="border rounded-md py-2 px-10 bg-black text-white w-fit mx-auto block mt-4" type="submit">Login</button><br>
+                <span class="block mx-auto w-fit text-xs">Create account?<a class="block mx-auto text-blue-700 w-fit font-semibold" href="signup.html">sign up</a></span>
             </form>
         </div>
     </div>

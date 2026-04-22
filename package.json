@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  },
+  "name": "php_project2---copy",
+  "version": "1.0.0",
+  "description": "A simple **PHP & MySQL authentication system** with a user dashboard.\r This project demonstrates how to build a complete login and signup system with session handling and a clean UI.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ijenny77/DashAuth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ijenny77/DashAuth/issues"
+  },
+  "homepage": "https://github.com/ijenny77/DashAuth#readme"
+}

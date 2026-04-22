@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="./src/output.css">
+    
 </head>
 <body>
-    <div class="outerdiv">
-        <img src="Make money_.jpeg" alt="">
-        <div class="innerdiv">
-            <h1>SIGN UP</h1>
+    <div class="flex border w-fit mt-40 rounded-xl mx-auto shadow-2xl shadow-zinc-700 shadow-blur-lg">
+        <img class="w-50 rounded-l-xl" src="Make money_.jpeg" alt="">
+        <div class="p-8">
+            <h1 class="text-center py-10 font-bold">SIGN UP</h1>
             <form action="signup.php" method="post">
-                <input type="text" name="username" id="Username" required placeholder="Enter the username"><br>
-                <input type="email" name="email" id="Email" required placeholder="Enter the email"><br>
-                <input type="password" name="password" id="Password" required placeholder="Enter the password"><br>
-                <button type="submit">Sign Up</button>
-                <a style="margin-left: 4rem;text-decoration: none;color: blue;" href="login.html">login</a>
+                <input  class="border rounded-md mb-4 py-1 px-2" type="text" name="username" id="Username" required placeholder="Enter the username"><br>
+                <input  class="border rounded-md mb-4 py-1 px-2" type="email" name="email" id="Email" required placeholder="Enter the email"><br>
+                <input  class="border rounded-md mb-4 py-1 px-2 " type="password" name="password" id="Password" required placeholder="Enter the password"><br>
+                <button class="border rounded-md py-2 px-10 bg-black text-white w-fit mx-auto block" type="submit">Sign Up</button><br>
+                <span class="block mx-auto w-fit text-xs">Already have an account?<a class="block mx-auto text-blue-700 w-fit font-semibold" href="login.html">login</a></span>
             </form>
         </div>
     </div>
