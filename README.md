@@ -1,4 +1,4 @@
-# 🔐 AuthNest
+# 🔐 DashAuth
 
 A simple **PHP & MySQL authentication system** with a user dashboard.
 This project demonstrates how to build a complete login and signup system with session handling and a clean UI.
