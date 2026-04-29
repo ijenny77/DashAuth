@@ -78,14 +78,13 @@
     <body>
         <div class="sidebar">
             <img src="profile.png" alt="Profile Picture">
-            <h2>Jenny</h2>
             <a href="admin_dashboard.php" class="active">Dashboard</a>
-            <a href="">Accounts</a>
+            <!-- <a href="">Accounts</a>
             <a href="">Transactions</a>
             <a href="">Budgets</a>
-            <a href="">Reports</a>
+            <a href="">Reports</a> -->
             <a href="settings.php">Settings</a>
-            <a href="logout.html">Logout</a>
+            <a href="login.html">Logout</a>
         </div>
         <h2 style = "color:white">Users List</h2>
         <table>
